@@ -27,18 +27,22 @@ class ViewController: UIViewController {
         startSetupView()
     }
     
-
-    
     // MARK: Actions
     @IBAction func camerasClick(_ sender: Any) {
         camerasMainView.isHidden = false
         doorMainView.isHidden = true
         
-        camerasBottomConstraint.constant = 2.0
-        camerasView.backgroundColor = .tintColor
+        camerasBottomConstraint.constant = 1.0
+//        camerasView.backgroundColor = #colorLiteral(red: 0, green: 0.6730648279, blue: 1, alpha: 1)
+//        camerasView.layer.shadowRadius = 2
+//        camerasView.layer.shadowOpacity = 1
+//        camerasView.layer.shadowPath = CGPath(rect: CGRect(x: 1, y: camerasView.frame.height, width: camerasView.frame.width, height: 2), transform: nil)
+//        camerasView.layer.shadowColor = #colorLiteral(red: 0, green: 0.6730648279, blue: 1, alpha: 1)
         
-        doorsBottomConstraint.constant = 2
-        doorsView.backgroundColor = .lightGray
+        doorsView.layer.shadowRadius = 1
+        doorsView.layer.shadowOpacity = 1
+        doorsView.layer.shadowPath = CGPath(rect: CGRect(x: 1, y: doorsView.frame.height , width: doorsView.frame.width, height: 2), transform: nil)
+        doorsView.layer.shadowColor = #colorLiteral(red: 0.2451822956, green: 0.2451822956, blue: 0.2451822956, alpha: 1)
         
     }
     
@@ -47,11 +51,15 @@ class ViewController: UIViewController {
         camerasMainView.isHidden = true
         doorMainView.isHidden = false
         
-        camerasBottomConstraint.constant = 2
-        camerasView.backgroundColor = .lightGray
+        doorsView.layer.shadowRadius = 2
+        doorsView.layer.shadowOpacity = 1
+        doorsView.layer.shadowPath = CGPath(rect: CGRect(x: 1, y: doorsView.frame.height, width: doorsView.frame.width, height: 2), transform: nil)
+        doorsView.layer.shadowColor = #colorLiteral(red: 0.2196078449, green: 0.007843137719, blue: 0.8549019694, alpha: 1)
         
-        doorsBottomConstraint.constant = 2.0
-        doorsView.backgroundColor = .tintColor
+        camerasView.layer.shadowRadius = 2
+        camerasView.layer.shadowOpacity = 0.5
+        camerasView.layer.shadowPath = CGPath(rect: CGRect(x: 1, y: camerasView.frame.height, width: camerasView.frame.width, height: 2), transform: nil)
+        camerasView.layer.shadowColor = #colorLiteral(red: 0.2451822956, green: 0.2451822956, blue: 0.2451822956, alpha: 1)
     }
     
 }
@@ -59,13 +67,14 @@ class ViewController: UIViewController {
 extension ViewController {
     // MARK: Setups
     private func startSetupView(){
-        camerasBottomConstraint.constant = 2.0
+        
         camerasView.isHidden = false
-        doorsBottomConstraint.constant = 2.0
-        doorsView.backgroundColor = .lightGray
+        //doorsView.backgroundColor = .lightGray
         doorMainView.isHidden = true
-        camerasMainView.backgroundColor = .red
-        doorMainView.backgroundColor = .yellow
+        
+        
+        camerasMainView.backgroundColor = .clear
+        doorMainView.backgroundColor = .clear
     }
 }
 
